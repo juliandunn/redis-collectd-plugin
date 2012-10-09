@@ -139,12 +139,17 @@ def read_callback():
     dispatch_value(info, 'connected_slaves', 'gauge')
     dispatch_value(info, 'blocked_clients', 'gauge')
     dispatch_value(info, 'used_memory', 'bytes')
+    dispatch_value(info, 'mem_fragmentation_ratio', 'gauge')
     dispatch_value(info, 'changes_since_last_save', 'gauge')
     dispatch_value(info, 'total_connections_received', 'counter',
                    'connections_received')
     dispatch_value(info, 'total_commands_processed', 'counter',
                    'commands_processed')
-
+    dispatch_value(info, 'used_cpu_sys', 'counter', 'cpu_sys')
+    dispatch_value(info, 'used_cpu_user', 'counter', 'cpu_user')
+    dispatch_value(info, 'used_cpu_sys_children', 'counter', 'cpu_sys_children')
+    dispatch_value(info, 'used_cpu_user_children', 'counter', 'cpu_user_children')
+    
     # database and vm stats
     for key in info:
         if key.startswith('vm_stats_'):
