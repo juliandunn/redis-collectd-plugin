@@ -115,7 +115,7 @@ def dispatch_value(info, key, type, type_instance=None):
     if not type_instance:
         type_instance = key
 
-    value = int(info[key])
+    value = int(float(info[key]))
     log_verbose('Sending value: %s=%s' % (type_instance, value))
 
     val = collectd.Values(plugin='redis_info')
